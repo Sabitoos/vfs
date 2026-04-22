@@ -115,7 +115,7 @@ def attempt_login():
     Браузер всегда закрывается после выполнения (успех или неудача).
     """
     co = ChromiumOptions()
-    co.set_browser_path('/usr/bin/chromium-browser')
+    co.set_browser_path('/usr/bin/google-chrome-stable') 
     co.set_argument('--disable-blink-features=AutomationControlled')
     co.set_argument('--start-maximized')
     co.set_argument('--force-device-scale-factor=1')
@@ -124,7 +124,7 @@ def attempt_login():
 
     if PROXY:
         co.set_argument(f'--proxy-server={PROXY}')
-        
+
         print(f"Используется прокси: {PROXY}")
 
     page = ChromiumPage(co)
